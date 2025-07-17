@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEEP Hélio Xavier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f4f6f8;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container10 {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .upload-box1 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input[type="file"] {
+      padding: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #a70000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #3498db;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #ecf0f1;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo CEEP" />
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">TCC</a>
+    <a href="#">Projeto</a>
+    <a href="#">Serviços</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Trabalhos salvos</h2>
+
+  <div class="upload-box">
+    <input type="file" />
+    <button>Enviar</button>
+  </div>
+
+  <ul>
+    <!-- Lista de trabalhos salvos -->
+    <li>Trabalho 1.pdf</li>
+    <li>Trabalho 2.docx</li>
+  </ul>
+</div>
+
+</body>
+</html>

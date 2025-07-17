@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armazenamento de Arquivos PDF</title>
+    <link rel="stylesheet" type="text/css" href="1pgn.css">
+</head>
+<body>
+             <div class="texto1">
+                <p><h1>Armazenamento do TCC</h1></p>               
+             </div>
+    <br><br>
+    <div class="button2">
+    <form id="uploadForm">
+        <input type="file"  name="file" accept="application/pdf" required>
+        <button type="submit" class="button1">Enviar TCC</button>
+    </form>
+    </div>
+    <br><br>
+    <div class="tituloLista">
+    <h2>TCC salvos:</h2>
+    </div>
+    <br>
+    
+    <ul id="pdfList" ></ul>
+    <script>
+        function exibirArquivos(){
+            const pdfList = document.getElementById('pdfList');
+            pdfList.innerHTML ='';//limpa a lista antes de reexibir
+                        // Recupera os arquivos do LocalStorage
+                        const arquivos = JSON.parse(localStorage.getItem('pdfFiles')) || []; 
+
+arquivos.forEach((arquivo, index) => {
+    const listItem = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = arquivo.dataUrl;
+    link.target = "_blank";
+    link.textContent = arquivo.nome;
+    listItem.appendChild(link);
+    pdfList.appendChild(listItem);
+});
+}
+
+// Função para armazenar o arquivo no LocalStorage
+function armazenarNoLocalStorage(file) {
+const reader = new FileReader();
+reader.onload = function(event) {
+    const fileDataUrl = event.target.result; // Dados base64 do arquivo PDF
+    const fileName = file.name;
+
+    // Recupera os arquivos já armazenados ou cria um array vazio
+    const arquivos = JSON.parse(localStorage.getItem('pdfFiles')) || [];
+
+    // Adiciona o novo arquivo ao array
+    arquivos.push({ nome: fileName, dataUrl: fileDataUrl });
+
+    // Armazena novamente no LocalStorage
+    localStorage.setItem('pdfFiles', JSON.stringify(arquivos));
+
+    // Exibe a lista atualizada de arquivos
+    exibirArquivos();
+};
+reader.readAsDataURL(file); // Converte o arquivo em base64
+}
+
+// Evento do envio do formulário
+document.getElementById('uploadForm').addEventListener('submit', function(event) {
+event.preventDefault(); // Impede o envio padrão do formulário
+
+const fileInput = document.querySelector('input[type="file"]');
+const file = fileInput.files[0]; // Pega o primeiro arquivo selecionado
+
+if (file && file.type === 'application/pdf') {
+    // Armazena o arquivo no LocalStorage
+    armazenarNoLocalStorage(file);
+    fileInput.value = ''; // Limpa o campo de seleção de arquivo
+} else {
+    alert('Por favor, selecione um arquivo PDF.');
+}
+});
+
+// Exibe os arquivos PDF armazenados ao carregar a página
+window.onload = function() {
+exibirArquivos();
+};
+
+    </script>    
+</body>
+</html>

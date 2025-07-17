@@ -1,0 +1,179 @@
+ul {
+    position: relative; /* Define posição relativa para os <ul>, útil se houver elementos posicionados dentro dele */
+}
+
+.conteiner2 {
+    display: flex; /* Ativa o Flexbox para layout em linha */
+    flex-direction: row; /* Alinha os itens na horizontal (linha) */
+    text-decoration: none; /* Remove sublinhado, mas não tem efeito em elementos que não sejam links */
+}
+
+.botao {
+    background: linear-gradient(to top, rgb(114, 114, 114), rgb(253, 253, 253)); /* Degradê de cinza escuro para claro */
+    border: 1px solid #000; /* Borda preta */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Cantos arredondados */
+    transition: 0.3s ease; /* Animações suaves ao interagir */
+    margin-top: 20px; /* Espaço acima do botão */
+}
+
+.linkbtn {
+    margin-right: 125px; /* Margem à direita, separando do próximo elemento */
+}
+
+.botao:hover {
+    background: linear-gradient(to top, rgb(255, 255, 255), rgb(110, 110, 110)); /* Muda o degradê ao passar o mouse */
+    transform: scale(1.15); /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
+.FUNDO-DO-TEXTO {
+    background-color: rgb(8, 8, 90); /* Fundo azul escuro */
+    color: white; /* Texto branco */
+}
+
+.FUNDO-DO-TEXTO h1 {
+    font-size: 60px; /* Tamanho grande do título */
+    margin: 0 10px 0 10px; /* Margens laterais */
+    text-align: center; /* Centraliza o texto */
+    font-family: "Poppins", sans-serif; /* Fonte personalizada */
+}
+
+.TEXTO-FINAL {
+    color: white; /* Texto branco */
+    margin: 0 5px 0 5px; /* Pequena margem lateral */
+    text-align: center; /* Centraliza o texto */
+    font-size: 20px; /* Tamanho do texto */
+    text-shadow: 10px; /* ⚠️ Inválido – precisa de valores corretos como '2px 2px 5px black' */
+}
+
+header {
+    margin-bottom: 50px; /* Espaço abaixo do cabeçalho */
+    background-color: #031050; /* Fundo azul escuro */
+    box-shadow: 0px 3px 10px hsl(234, 97%, 37%); /* Sombra embaixo do cabeçalho */
+}
+
+.barra {
+    color: white; /* Cor branca para as barras divisórias */
+    cursor: default; /* Cursor padrão (não clicável) */
+    font-size: 25px; /* Tamanho do texto */
+    margin-bottom: 100px; /* Espaço abaixo (exagerado se usado repetidamente) */
+}
+
+.logo {
+    display: flex; /* Usa flex para alinhamento interno */
+    align-items: center; /* Alinha verticalmente ao centro */
+    width: 100px; /* Largura máxima do logo */
+}
+
+.nav-bar {
+    display: flex; /* Flexbox para layout horizontal */
+    justify-content: space-between; /* Espaço entre elementos à esquerda e direita */
+    padding: 1.5rem 6rem; /* Espaço interno: cima/baixo 1.5rem, lados 6rem */
+}
+
+.logo h1 {
+    color: #fff; /* Título do logo em branco */
+}
+
+.nav-list {
+    display: flex; /* Flexbox para organizar os itens */
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+.nav-list ul {
+    display: flex; /* Itens lado a lado */
+    justify-content: center; /* Centraliza o conteúdo */
+    list-style: none; /* Remove marcadores de lista */
+}
+
+.nav-item {
+    margin: 29px 15px; /* Espaço acima/abaixo e entre os itens de menu */
+}
+
+.nav-link {
+    text-decoration: none; /* Remove sublinhado dos links */
+    font-size: 1.15rem; /* Tamanho da fonte */
+    color: #fff; /* Cor branca */
+    font-weight: 400; /* Peso médio da fonte */
+}
+
+.login-button button {
+    border: none; /* Remove a borda do botão */
+    background-color: #a70101; /* Fundo vermelho */
+    padding: 10px 15px; /* Espaço interno */
+    border-radius: 15px; /* Cantos arredondados */
+}
+
+.login-button button a {
+    text-decoration: none; /* Remove sublinhado do link */
+    color: #fff; /* Cor branca no texto do botão */
+}
+
+.mobile-menu-icon {
+    display: none; /* Esconde o ícone do menu em telas grandes */
+}
+
+.mobile-menu {
+    display: none; /* Menu mobile fica escondido por padrão */
+}
+
+.logo {
+    max-width: 100px; /* Garante que o logo não ultrapasse 100px */
+}
+
+@media screen and (max-width: 730px) { /* Regras para telas pequenas (celulares, tablets) */
+
+    .nav-bar {
+        padding: 1.5rem 4rem; /* Reduz o padding lateral em telas menores */
+    }
+
+    .nav-item {
+        display: none; /* Esconde os itens do menu normal */
+    }
+
+    .login-button {
+        display: none; /* Esconde o botão de login padrão */
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Mostra o ícone de menu (hambúrguer) */
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent; /* Sem fundo no botão do ícone */
+        border: none; /* Sem borda */
+        cursor: pointer; /* Cursor de clique */
+    }
+
+    .mobile-menu ul {
+        display: flex; /* Layout em coluna */
+        flex-direction: column; /* Itens um abaixo do outro */
+        text-align: center; /* Centraliza o texto */
+        padding-bottom: 1rem; /* Espaço abaixo do menu */
+    }
+
+    .mobile-menu .nav-item {
+        display: block; /* Mostra os itens escondidos para o menu mobile */
+        padding-top: 1.2rem; /* Espaço entre os itens */
+    }
+
+    .mobile-menu .login-button {
+        display: block; /* Mostra o botão de login dentro do menu mobile */
+        padding: 1rem 2rem; /* Espaço ao redor do botão */
+    }
+
+    .mobile-menu .login-button button {
+        width: 100%; /* Faz o botão ocupar toda a largura do menu */
+    }
+
+    .open {
+        display: block; /* Classe que ativa a exibição do menu mobile */
+    }
+}
+
+.nav-bar {
+    display: flex; /* Flexbox para layout em linha */
+    justify-content: space-between; /* Espaço entre elementos à esquerda e à direita */
+    align-items: center; /* Alinha os elementos verticalmente ao centro */
+    padding: 10px 40px; /* Espaçamento interno: cima/baixo 10px, lados 40px */
+}

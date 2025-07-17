@@ -1,0 +1,181 @@
+ul {
+    position: relative; /* Permite posicionar elementos filhos com position: absolute em relação a este ul */
+}
+
+.conteiner2 {
+    display: flex; /* Ativa Flexbox para layout em linha */
+    flex-direction: row; /* Organiza os filhos na horizontal */
+    text-decoration: none; /* Remove sublinhado (ineficaz aqui se não for link) */
+}
+
+.botao {
+    background: linear-gradient(to top, rgb(114, 114, 114), rgb(253, 253, 253)); /* Gradiente de cinza escuro para claro */
+    border: 1px solid #000; /* Borda preta */
+    padding: 10px 20px; /* Espaço interno: 10px em cima/baixo, 20px nas laterais */
+    border-radius: 8px; /* Cantos arredondados */
+    transition: 0.3s ease; /* Transição suave ao interagir */
+    margin-top: 20px; /* Espaço acima do botão */
+}
+
+.linkbtn {
+    margin-right: 125px; /* Distância à direita do botão */
+}
+
+.botao:hover {
+    background: linear-gradient(to top, rgb(255, 255, 255), rgb(110, 110, 110)); /* Inverte o gradiente ao passar o mouse */
+    transform: scale(1.15); /* Aumenta o botão em 15% no hover */
+}
+
+.FUNDO-DO-TEXTO {
+    background-color: rgb(8, 8, 90); /* Fundo azul escuro */
+    color: white; /* Cor do texto: branco */
+}
+
+.FUNDO-DO-TEXTO h1 {
+    font-size: 60px; /* Tamanho da fonte do h1 */
+    margin: 0 10px 0 10px; /* Margem lateral de 10px */
+    text-align: center; /* Centraliza o título */
+    font-family: "Poppins", sans-serif; /* Define a fonte */
+}
+
+.TEXTO-FINAL {
+    color: white; /* Cor do texto: branco */
+    margin: 0 5px 0 5px; /* Margem lateral de 5px */
+    text-align: center; /* Centraliza o texto */
+    font-size: 20px; /* Tamanho da fonte */
+    text-shadow: 10px; /* ⚠️ INCORRETO — falta definir direção e cor do sombreamento */
+    /* Correto seria algo como: text-shadow: 2px 2px 5px black; */
+}
+
+header {
+    margin-bottom: 50px; /* Espaço abaixo do cabeçalho */
+    background-color: #031050; /* Fundo azul escuro */
+    box-shadow: 0px 3px 10px hsl(234, 97%, 37%); /* Sombra abaixo do cabeçalho */
+}
+
+.barra {
+    color: white; /* Texto branco */
+    cursor: default; /* Cursor normal (não clicável) */
+    font-size: 25px; /* Tamanho do texto */
+    margin-bottom: 100px; /* Espaço extra abaixo */
+}
+
+.logo {
+    display: flex; /* Usa Flexbox para alinhar conteúdo */
+    align-items: center; /* Alinha verticalmente no centro */
+    width: 100px; /* Largura máxima da logo */
+}
+
+.nav-bar {
+    display: flex; /* Flexbox para layout horizontal */
+    justify-content: space-between; /* Espaço entre itens esquerda e direita */
+    padding: 1.5rem 6rem; /* Espaço interno: 1.5 acima/baixo, 6rem laterais */
+}
+
+.logo h1 {
+    color: #fff; /* Cor branca para o texto da logo */
+}
+
+.nav-list {
+    display: flex; /* Flexbox no container dos links */
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+.nav-list ul {
+    display: flex; /* Links em linha horizontal */
+    justify-content: center; /* Centraliza o conteúdo */
+    list-style: none; /* Remove bolinhas da lista */
+}
+
+.nav-item {
+    margin: 29px 15px; /* Espaço entre os itens do menu */
+}
+
+.nav-link {
+    text-decoration: none; /* Remove sublinhado dos links */
+    font-size: 1.15rem; /* Tamanho da fonte */
+    color: #fff; /* Cor branca */
+    font-weight: 400; /* Peso da fonte médio */
+}
+
+.login-button button {
+    border: none; /* Remove borda do botão */
+    background-color: #a70101; /* Fundo vermelho */
+    padding: 10px 15px; /* Espaço interno do botão */
+    border-radius: 15px; /* Bordas arredondadas */
+}
+
+.login-button button a {
+    text-decoration: none; /* Remove sublinhado do link dentro do botão */
+    color: #fff; /* Cor branca para o texto do link */
+}
+
+.mobile-menu-icon {
+    display: none; /* Ícone de menu mobile escondido por padrão */
+}
+
+.mobile-menu {
+    display: none; /* Menu mobile escondido inicialmente */
+}
+
+.logo {
+    max-width: 100px; /* Garante que a logo não passe de 100px */
+}
+
+/* Estilos para telas menores que 730px */
+@media screen and (max-width: 730px) {
+
+    .nav-bar {
+        padding: 1.5rem 4rem; /* Reduz o espaçamento lateral do menu */
+    }
+
+    .nav-item {
+        display: none; /* Esconde os itens do menu padrão */
+    }
+
+    .login-button {
+        display: none; /* Esconde o botão de login padrão */
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Mostra o botão do menu mobile */
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent; /* Sem fundo */
+        border: none; /* Sem borda */
+        cursor: pointer; /* Mostra cursor de clique */
+    }
+
+    .mobile-menu ul {
+        display: flex; /* Mostra os itens */
+        flex-direction: column; /* Organiza em coluna (um abaixo do outro) */
+        text-align: center; /* Centraliza os textos */
+        padding-bottom: 1rem; /* Espaço inferior */
+    }
+
+    .mobile-menu .nav-item {
+        display: block; /* Mostra os itens do menu mobile */
+        padding-top: 1.2rem; /* Espaçamento entre os itens */
+    }
+
+    .mobile-menu .login-button {
+        display: block; /* Mostra botão de login dentro do menu mobile */
+        padding: 1rem 2rem; /* Espaçamento ao redor do botão */
+    }
+
+    .mobile-menu .login-button button {
+        width: 100%; /* Faz o botão ocupar toda a largura */
+    }
+
+    .open {
+        display: block; /* Classe que ativa a exibição do menu mobile */
+    }
+}
+
+.nav-bar {
+    display: flex; /* Flexbox ativado */
+    justify-content: space-between; /* Espaço entre esquerda e direita */
+    align-items: center; /* Alinhamento vertical ao centro */
+    padding: 10px 40px; /* Espaçamento interno: cima/baixo 10px, lados 40px */
+}
